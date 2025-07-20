@@ -8,23 +8,29 @@
     <link rel="stylesheet" href="game.css">
 </head>
 <body>
-    <!--프로그램 1: 오직 협력
-        프로그램 2: 오직 배신
-        프로그램 3: 따라함
-        프로그램 4: 협력하다가 상대가 배신하면 쭉 배신
-        프로그램 5: 상대 협력,배신 비율에 따라 확률 변화 -->
-        <button class="score" id="score_left">0</button>
-        <button class="score" id="score_right">0</button>
-        <button class="select" id="trust">협력</button>
-        <button class="select" id="betray">배신</button>
-        <button id="player">플레이어</button>
-        <button id="bot">상대</button>
-        <img src="https://github.com/mangotree1234/png_openlab/blob/main/people.png?raw=true" id="people_left">
-        <img src="https://github.com/mangotree1234/png_openlab/blob/main/people.png?raw=true" id="people_right">
-        <p id="turn_counter">턴: 0 / 7</p>
-
-        <!--스크립트 코드-->
-        <script>
+    <div id="game-container">
+        <span id="turn_counter">턴: 0 / 7</span>
+        <div class="scorebar">
+            <span id="score_left">0</span>
+            <span id="score_right">0</span>
+        </div>
+        <div class="main-box">
+            <div class="center-player">
+                <span id="player">플레이어</span>
+                <img src="https://github.com/mangotree1234/png_openlab/blob/main/people.png?raw=true" id="people_left">
+            </div>
+            <div class="score-box"></div>
+            <div class="right-bot">
+                <span id="bot">상대</span>
+                <img src="https://github.com/mangotree1234/png_openlab/blob/main/people.png?raw=true" id="people_right">
+            </div>
+        </div>
+        <div class="action-row">
+            <button class="select" id="trust">협력</button>
+            <button class="select" id="betray">배신</button>
+        </div>
+    </div>
+    <script>
         const Tbtn = document.getElementById('trust');
         const Bbtn = document.getElementById('betray');
         const SL = document.getElementById('score_left');
